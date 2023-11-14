@@ -14,7 +14,7 @@ Mozart requires a Sechzig module to power on. **When inserting a Sechzig module,
 
 ## Firmware
 
-Mozart has a JTAG interface and USB-UART interface that are both accessible on the USB-C port. These interfaces are provided by a [fork of pico-dirtyJtag](https://github.com/machdyne/mozart/firmware). You can update the RP2040 firmware by holding down the BOOT button and then applying power.
+Mozart has a JTAG and USB CDC interface that are both accessible on the USB-C port. These interfaces are provided by a [fork of pico-dirtyJtag](https://github.com/machdyne/mozart/tree/main/firmware). You can update the RP2040 firmware by holding down the BOOT button and then applying power.
 
 ## Programming
 
