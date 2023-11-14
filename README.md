@@ -2,6 +2,8 @@
 
 Mozart is a motherboard that when paired with a [Sechzig](https://github.com/machdyne/sechzig) compute module can function as a computer.
 
+![Mozart Motherboard](https://github.com/machdyne/mozart/blob/f5a1b275e8dc324be2206cd35ae61664bfe08e8c/mozart.png)
+
 This repo contains schematics, PCB layouts, pinouts and documentation.
 
 Find more information on the [Mozart product page](https://machdyne.com/product/mozart-motherboard/).
