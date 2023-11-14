@@ -21,13 +21,13 @@ Mozart has a JTAG and USB CDC interface that are both accessible on the USB-C po
 Program the configuration SRAM of a Sechzig module:
 
 ```
-openFPGALoader -c dirtyJtag image.bit
+sudo openFPGALoader -c dirtyJtag image.bit
 ```
 
 Program the configuration flash on a Sechzig module:
 
 ```
-openFPGALoader -f -c dirtyJtag image.bit
+sudo openFPGALoader -f -c dirtyJtag image.bit
 ```
 
 ## Linux
@@ -59,7 +59,7 @@ Mozart has line-level audio output via a 3.5mm jack.
 | S | GND |
 | R2 | NC |
 | R1 | AUDIO\_R |
-| T | AUDIO\L |
+| T | AUDIO\_L |
 
 ### Audio Amp Port
 
