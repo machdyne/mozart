@@ -16,6 +16,15 @@ Mozart requires a Sechzig module to power on. **When inserting a Sechzig module,
 
 Mozart has a JTAG and USB CDC interface that are both accessible on the USB-C port. These interfaces are provided by a [fork of pico-dirtyJtag](https://github.com/machdyne/mozart/tree/main/firmware). You can update the RP2040 firmware by holding down the BOOT button and then applying power.
 
+To build the firmware from source:
+
+```
+$ cd firmware/pico-dirtyJtag
+$ mkdir build
+$ cmake .. -DPICO_DEFAULT_BOOT_STAGE2_FILE=/your-pico-sdk-directory/pico-sdk/src/rp2_common/boot_stage2/boot2_generic_03h.S
+$ make
+```
+
 ## Programming
 
 Program the configuration SRAM of a Sechzig module:
