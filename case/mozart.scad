@@ -3,7 +3,7 @@
  * Copyright (c) 2023 Lone Dynamics Corporation. All rights reserved.
  *
  * required hardware:
- *  - 2 x M3 x 6mm bolts
+ *  - 2 x M3 x 12mm bolts
  *  - 2 x M3 x 25mm countersunk bolts
  *  - 4 x M3 nuts
  * 
@@ -21,10 +21,10 @@ wall = 1.5;
 
 //translate([1,2,-1.6]) ld9_board();
 
-//translate([0,0,0])
-//	ld9_case_top();
+translate([0,0,0])
+	ld9_case_top();
 
-translate([0,0,-6])
+translate([0,0,-6.5])
 	ld9_case_bottom();
 
 module ld9_board() {
