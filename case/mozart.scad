@@ -82,8 +82,8 @@ module ld9_case_top() {
 				// bolt holes
 				translate([55,5,0]) cylinder(d=3.2, h=50);
 				translate([55,95,0]) cylinder(d=3.2, h=50);
-				translate([55,5,19]) cylinder(d=6, h=2);
-				translate([55,95,19]) cylinder(d=6, h=2);
+				translate([55,5,18.5]) cylinder(d=6, h=2);
+				translate([55,95,18.5]) cylinder(d=6, h=2);
 
 			}
 			difference() {
@@ -102,7 +102,6 @@ module ld9_case_top() {
 			// body			
 			union() {
 				translate([-5,0,0]) roundedcube(68,104,20,5);
-//				translate([-6-1.5,104/2-10/2,0]) cube([10,10,5]);			
 			}
 			
 			translate([1,2,-0.1]) {
@@ -164,8 +163,8 @@ module ld9_case_top() {
 				translate([55,5,0]) cylinder(d=3.2, h=50);
 				translate([55,95,0]) cylinder(d=3.2, h=50);
 
-				translate([55,5,19]) cylinder(d=6, h=2);
-				translate([55,95,19]) cylinder(d=6, h=2);
+				translate([55,5,18.5]) cylinder(d=6, h=3);
+				translate([55,95,18.5]) cylinder(d=6, h=3);
 				
 				translate([0,25,19])
 					rotate([0,0,90])
