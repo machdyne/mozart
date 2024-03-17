@@ -33,10 +33,16 @@ Program the configuration SRAM of a Sechzig module:
 sudo openFPGALoader -c dirtyJtag image.bit
 ```
 
-Program the configuration flash on a Sechzig module:
+Program the configuration flash on a Sechzig ML module:
 
 ```
 sudo openFPGALoader -f -c dirtyJtag image.bit
+```
+
+Program the configuration flash on a Sechzig MX1 module:
+
+```
+sudo openFPGALoader -c dirtyJtag -f image.bit --fpga-part xc7a35tftg256
 ```
 
 ## Linux
