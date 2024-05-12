@@ -2,6 +2,8 @@
  * Mozart/Vivaldi Box Case
  * Copyright (c) 2024 Lone Dynamics Corporation. All rights reserved.
  *
+ * NOTE: vivaldi isn't supported yet
+ *
  * required hardware:
  *  - 4 x M3 x 12mm bolts
  *  - 4 x M3 nuts
@@ -21,19 +23,22 @@ wall = 1.5;
 mozart = true;
 vivaldi = !mozart;
 
+lid_window = false;
+lid_speakers = true;
+
 //translate([1,2,-1.6]) ld9_board();
 
 translate([-5,0,60])
 	ld9_case_lid();
 
-translate([-5,0,60])
-	ld9_case_window();
+//translate([-5,0,60])
+//	ld9_case_window();
 
 translate([0,0,0])
 	ld9_case_top();
 
-translate([0,0,-6.5])
-	ld9_case_bottom();
+//translate([0,0,-6.5])
+//	ld9_case_bottom();
 
 module ld9_board() {
 	
@@ -59,6 +64,9 @@ module ld9_board() {
 
 module ld9_case_lid() {
 	
+	//color([1,0,0]) translate([68/2,104/2-22,-4]) cylinder(d=40, h=4, center=true);
+	//color([1,0,0]) translate([68/2,104/2+22,-4]) cylinder(d=40, h=4, center=true);	
+		
 	difference() {
 		
 		union() {
@@ -66,23 +74,42 @@ module ld9_case_lid() {
 				translate([0,0,0]) roundedcube(68,104,2,5);
 				translate([2.1,2.1,-2]) roundedcube(68-4.2,104-4.2,2,5);
 			}
+			
+			if (lid_speakers) {
+				translate([8,5,-8]) color([1,1,0]) roundedcube(68-16,104-10,8,5);
+			}
 		}
 	
-		translate([(64/2)-(20/2)+2.5,(104/2)-20/2,0]) cube([20,20,4]);
-		translate([(64/2)-(5/2)-2.5,(104/2)-15/2,-5]) cube([15,15,20]);
+		if (lid_window) {
+			translate([(64/2)-(20/2)+2.5,(104/2)-20/2,0]) cube([20,20,4]);
+			translate([(64/2)-(5/2)-2.5,(104/2)-15/2,-5]) cube([15,15,20]);
+		}
+		
+		if (lid_speakers) {
+			translate([68/2-10/2,104/2-22-10,-2]) roundedcube(10,2,5,1);
+			translate([68/2-15/2,104/2-22-5,-2]) roundedcube(15,2,5,1);
+			translate([68/2-20/2,104/2-22,-2]) roundedcube(20,2,5,1);
+			translate([68/2-15/2,104/2-22+5,-2]) roundedcube(15,2,5,1);
+			translate([68/2-10/2,104/2-22+10,-2]) roundedcube(10,2,5,1);
+
+			translate([68/2-10/2,104/2+22-10,-2]) roundedcube(10,2,5,1);
+			translate([68/2-15/2,104/2+22-5,-2]) roundedcube(15,2,5,1);
+			translate([68/2-20/2,104/2+22,-2]) roundedcube(20,2,5,1);
+			translate([68/2-15/2,104/2+22+5,-2]) roundedcube(15,2,5,1);
+			translate([68/2-10/2,104/2+22+10,-2]) roundedcube(10,2,5,1);
+			
+			translate([68/2+10,104/2-22,-4]) cube([85,45,5], center=true);
+			translate([68/2+10,104/2+22,-4]) cube([85,45,5], center=true);
+			
+			translate([68/2+15,104/2-22,-6]) cube([10,40,5], center=true);
+			translate([68/2+15,104/2+22,-6]) cube([10,40,5], center=true);
+			
+			translate([68/2-15,104/2-22,-6]) cube([10,40,5], center=true);
+			translate([68/2-15,104/2+22,-6]) cube([10,40,5], center=true);
+		
+		}
 		
 	}
-}
-
-module ld9_case_window() {
-	
-	union() {
-		color([0,0,1]) {
-			translate([(64/2)-(20/2)+2.5+0.125,(104/2)-20/2+0.125,0]) cube([20-0.25,20-0.25,2]);
-			translate([(64/2)-(5/2)-2.5+0.25,(104/2)-15/2+0.25,-3]) cube([15-0.5,15-0.5,3]);
-		}
-	}
-	
 }
 
 module ld9_case_top() {
