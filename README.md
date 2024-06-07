@@ -21,7 +21,11 @@ To build the firmware from source:
 ```
 $ cd firmware/pico-dirtyJtag
 $ mkdir build
+# if your Mozart has Zetta flash:
+$ cmake ..
+# or if your Mozart has Adesto flash:
 $ cmake .. -DPICO_DEFAULT_BOOT_STAGE2_FILE=/your-pico-sdk-directory/pico-sdk/src/rp2_common/boot_stage2/boot2_generic_03h.S
+# then
 $ make
 ```
 
